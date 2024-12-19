@@ -35,7 +35,11 @@ app.get('/',(req,res)=>{
 })
 
 const PORT = process.env.PORT || 8000;
+app.use(express.static("./client/build"));
 
+app.get("*",(req,res)=>{
+  res.sendFile(path.resolve(__dirname, "client","build","index.html"))
+});
 //run listen
 
 app.listen(PORT, ()=>{
