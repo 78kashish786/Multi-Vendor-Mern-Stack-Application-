@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
-
+import dotenv from 'dotenv'
 import colors from 'colors';
 
 const connectDB = async()=>{
     try{
-        const conn = await mongoose.connect("mongodb://127.0.0.1:27017/ecommerce");
+        const conn = await mongoose.connect(process.env.MONGO_URL);
         console.log(`connected to mongodb ${conn.connection.host}`.bgCyan.white);
 
     }catch(err){
