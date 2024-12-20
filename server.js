@@ -18,7 +18,10 @@ connectDB();
 //middleware
 app.use(cors({ origin: 'https://multi-vendor-mern-stack-application-zlxu.vercel.app', 
               methods: ['POST', 'GET', 'PUT', 'DELETE'],
-              allowedHeaders: ['Content-Type', 'Authorization']
+              allowedHeaders: ['Content-Type', 'Authorization'] 
+             }));
+
+
 app.use(express.json())
 app.use(morgan('dev'))
 
